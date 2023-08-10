@@ -1,7 +1,8 @@
-gi# data-structures-and-algorithms
+# data-structures-and-algorithms
 
-# Challenge Title
-<!-- Description of the challenge -->
+# Challenge Title: Reverse an array.
+
+
 
 ## Whiteboard Process
 ![](../array.PNG)

@@ -1,6 +1,8 @@
 # data-structures-and-algorithms
 
-# Challenge Title
+# Challenge Title: Insert and shift an array in middle at index
+
+
 <!-- Description of the challenge -->
 
 ## Whiteboard Process
