@@ -59,4 +59,66 @@ class AppTest {
             list.insert(1);
             assertEquals("{ 1 } -> { 3 } -> { 5 } -> NULL", list.toString());
         }
+    @Test
+    public void testAppend() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.append(1);
+        assertEquals(1, (int)list.head.value);
+        list.append(2);
+        assertEquals(2, (int)list.head.next.value);
+        list.append(3);
+        assertEquals(3, (int)list.head.next.next.value);
     }
+
+    @Test
+    public void testAppendOneNodeToList() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.append(1);
+        assertEquals(1, (int)list.head.value);
+    }
+
+    @Test
+    public void testInsertBeforeInMiddle() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.insertBefore(2, 4);
+        assertEquals(4, (int)list.head.next.value);
+        assertEquals(2, (int)list.head.next.next.value);
+    }
+
+    @Test
+    public void testInsertBeforeAtBeginning() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.insertBefore(1, 4);
+        assertEquals(4, (int)list.head.value);
+    }
+
+    @Test
+    public void testInsertAfterInMiddle() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.insertAfter(2, 4);
+        LinkedList.Node<Integer> node = list.head.next.next;
+        assertEquals(4, (int)node.value);
+        assertEquals(3, (int)node.next.value);
+    }
+
+    @Test
+    public void testInsertAfterAtEnd() {
+        LinkedList<Integer> list = new LinkedList<>();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.insertAfter(3, 4);
+        LinkedList.Node<Integer> node = list.head.next.next.next;
+        assertEquals(4, (int)node.value);
+    }
+}
+
