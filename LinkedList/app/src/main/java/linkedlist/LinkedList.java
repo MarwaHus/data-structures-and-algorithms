@@ -36,4 +36,52 @@ public class LinkedList {
         }
         return result.toString();
     }
+    public void append(int  value) {
+        Node newNode = new Node(value);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node current = head;
+            while (current.next != null) {
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+    }
+    public void insertBefore(int value, int newValue) {
+        Node newNode = new Node(newValue);
+        if (head == null) {
+            return;
+        }
+        if (head.value.equals(value)) {
+            newNode.next = head;
+            head = newNode;
+            return;
+        }
+        Node current = head;
+        while (current.next != null) {
+            if (current.next.value.equals(value)) {
+                newNode.next = current.next;
+                current.next = newNode;
+                return;
+            }
+            current = current.next;
+        }
+    }
+    public void insertAfter(int value, int newValue) {
+        Node newNode = new Node(newValue);
+        if (head == null) {
+            return;
+        }
+        Node current = head;
+        while (current != null) {
+            if (current.value.equals(value)) {
+                newNode.next = current.next;
+                current.next = newNode;
+                return;
+            }
+            current = current.next;
+        }
+    }
+}
 }

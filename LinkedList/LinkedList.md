@@ -14,6 +14,9 @@ The insert method adds a new node to the beginning of the linked list. The inclu
 
 The time complexity of the insert method is O(1) as it adds a new node to the beginning of the list, which takes constant time. The time complexity of the includes and toString methods is O(n), where n is the size of the linked list as both of them must traverse every node in the list. Therefore, the overall time complexity of the given code is O(n) where n is the number of nodes in the linked list.
 ## Solution
+
 <!-- Show how to run your code, and examples of it in action -->
 ![](list1.PNG)
+
 ![](list2.PNG)
+

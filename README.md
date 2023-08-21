@@ -6,4 +6,5 @@
 | arrayReverse      | [arrayReverse](./arrayReverse/ArrayReverse.md)             |
 | arrayInsertShift  | [arrayInsertShift](./ArrayInsertShift/ArrayInsertShift.md) |
 | arrayBinarySearch | [arrayBinarySearch](./arrayBS/ArrayBS.md)                  |
-| linkedlist        | [linkedlist](./LinkedList/LinkedList.md)                   |
+| LinkedList        | [LinkedList](./LinkedList/LinkedList.md)                   |
+| linked-list-insertions        | [linked-list-insertions](./LinkedList/insertions.md)       |
