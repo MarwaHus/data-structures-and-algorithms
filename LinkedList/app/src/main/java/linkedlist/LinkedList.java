@@ -83,5 +83,33 @@ public class LinkedList<T extends Number> {
             current = current.next;
         }
     }
+    public int kthFromEnd(int k) {
+        int length = 0;
+        Node current = head;
+        while (current != null) {
+            length++;
+            current = current.next;
+        }
+        if (k > length || k <= 0) {
+            throw new IndexOutOfBoundsException();
+        }
+        current = head;
+        for (int i = 0; i < length - k; i++) {
+            current = current.next;
+        }
+        return current.value;
+    }
+    public Node findMiddleNode(LinkedList list) {
+        if (list.head == null) {
+            return null;
+        }
+        Node one = list.head;
+        Node two = list.head;
+        while (two != null && two.next != null) {
+            one = one.next;
+            two = two.next.next;
+        }
+        return one;
+    }
 }
 
