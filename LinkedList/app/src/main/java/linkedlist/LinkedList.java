@@ -1,5 +1,5 @@
 package linkedlist;
-public class LinkedList {
+public class LinkedList<T extends Number> {
 
     public Node head; // head property
 
@@ -53,14 +53,14 @@ public class LinkedList {
         if (head == null) {
             return;
         }
-        if (head.value.equals(value)) {
+        if (Objects.equals(head.value, value)) {
             newNode.next = head;
             head = newNode;
             return;
         }
         Node current = head;
         while (current.next != null) {
-            if (current.next.value.equals(value)) {
+            if (Objects.equals(current.next.value, value)) {
                 newNode.next = current.next;
                 current.next = newNode;
                 return;
@@ -75,7 +75,7 @@ public class LinkedList {
         }
         Node current = head;
         while (current != null) {
-            if (current.value.equals(value)) {
+            if (Objects.equals(current.value, value)) {
                 newNode.next = current.next;
                 current.next = newNode;
                 return;
@@ -84,4 +84,4 @@ public class LinkedList {
         }
     }
 }
-}
+
