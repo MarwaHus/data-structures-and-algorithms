@@ -6,7 +6,7 @@ package linkedlist;
 public class App {
 
     public static void main(String[] args) {
-        LinkedList myList = new LinkedList();
+        LinkedList<Number> myList = new LinkedList<Number>();
         myList.insert(5);
         myList.insert(10);
         myList.insert(15);
@@ -15,4 +15,5 @@ public class App {
         System.out.println("Includes 10: " + myList.includes(10));
         System.out.println("Includes 20: " + myList.includes(20));
     }
+
 }
