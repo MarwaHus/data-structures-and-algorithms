@@ -1,4 +1,6 @@
 package linkedlist;
+import java.util.Objects;
+
 public class LinkedList<T extends Number> {
 
     public Node head; // head property
@@ -111,5 +113,38 @@ public class LinkedList<T extends Number> {
         }
         return one;
     }
+    public LinkedList zipLists(LinkedList list1, LinkedList list2) {
+        if (list1.head == null) {
+            return list2;
+        } else if (list2.head == null) {
+            return list1;
+        }
+
+        LinkedList result = new LinkedList();
+        Node current1 = list1.head;
+        Node current2 = list2.head;
+
+        while (current1 != null && current2 != null) {
+            result.append(current1.value);
+            result.append(current2.value);
+            current1 = current1.next;
+            current2 = current2.next;
+        }
+
+        while (current1 != null) {
+            result.append(current1.value);
+            current1 = current1.next;
+        }
+
+        while (current2 != null) {
+            result.append(current2.value);
+            current2 = current2.next;
+        }
+
+        return result;
+    }
+
 }
+
+
 
