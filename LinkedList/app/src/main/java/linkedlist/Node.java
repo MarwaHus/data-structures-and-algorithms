@@ -1,9 +1,9 @@
 package linkedlist;
 public class Node {
     public int value;
-    public Node next; // pointer to the next Node
+    public Node next;
     public Node(int val) {
-        value = val;
-        next = null; // initialize next to null
+        this.value = val;
+        this.next = null;
     }
 }

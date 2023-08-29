@@ -14,6 +14,23 @@ public class App {
         System.out.println("LinkedList: " + myList.toString());
         System.out.println("Includes 10: " + myList.includes(10));
         System.out.println("Includes 20: " + myList.includes(20));
+
+        LinkedList<Integer> myList1 = new LinkedList<>();
+        myList1.insert(5);
+        myList1.insert(10);
+        myList1.insert(15);
+
+        LinkedList<Integer> myList2 = new LinkedList<>();
+        myList2.insert(1);
+        myList2.insert(2);
+        myList2.insert(3);
+
+        System.out.println("List 1: " + myList1.toString());
+        System.out.println("List 2: " + myList2.toString());
+
+        LinkedList<Integer> zippedList = myList1.zipLists(myList1, myList2);
+
+        System.out.println("Zipped List: " + zippedList.toString());
     }
 
 }
