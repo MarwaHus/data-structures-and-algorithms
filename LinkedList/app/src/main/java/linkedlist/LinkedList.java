@@ -1,4 +1,6 @@
 package linkedlist;
+
+import java.util.Objects;
 public class LinkedList<T extends Number> {
 
     public Node head; // head property

@@ -64,3 +64,4 @@ The time complexity of the append, insertBefore, and insertAfter methods is O(n)
         }
     }
 }</pre>
+![](instest.PNG)
