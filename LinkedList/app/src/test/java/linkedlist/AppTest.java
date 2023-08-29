@@ -58,17 +58,15 @@ class AppTest {
     public void testAppend() {
         LinkedList<Integer> list = new LinkedList<>();
         list.append(1);
-        assertEquals(1, (int)list.head.value);
-        list.append(2);
-        assertEquals(2, (int)list.head.next.value);
-        list.append(3);
-        assertEquals(3, (int)list.head.next.next.value);
+        assertEquals("{ 1 } -> NULL", list.toString());
     }
     @Test
-    public void testAppendOneNodeToList() {
+    public void testAppendMultipleNodes() {
         LinkedList<Integer> list = new LinkedList<>();
         list.append(1);
-        assertEquals(1, (int)list.head.value);
+        list.append(2);
+        list.append(3);
+        assertEquals("{ 1 } -> { 2 } -> { 3 } -> NULL", list.toString());
     }
     @Test
     public void testInsertBeforeInMiddle() {
@@ -76,18 +74,16 @@ class AppTest {
         list.append(1);
         list.append(2);
         list.append(3);
-        list.insertBefore(2, 4);
-        assertEquals(4, (int)list.head.next.value);
-        assertEquals(2, (int)list.head.next.next.value);
+        list.insertBefore(2, 5);
+        assertEquals("{ 1 } -> { 5 } -> { 2 } -> { 3 } -> NULL", list.toString());
     }
     @Test
     public void testInsertBeforeAtBeginning() {
         LinkedList<Integer> list = new LinkedList<>();
         list.append(1);
         list.append(2);
-        list.append(3);
-        list.insertBefore(1, 4);
-        assertEquals(4, (int)list.head.value);
+        list.insertBefore(1, 5);
+        assertEquals("{ 5 } -> { 1 } -> { 2 } -> NULL", list.toString());
     }
     @Test
     public void testInsertAfterInMiddle() {
@@ -95,20 +91,16 @@ class AppTest {
         list.append(1);
         list.append(2);
         list.append(3);
-        list.insertAfter(2, 4);
-        linkedlist.Node node = list.head.next.next;
-        assertEquals(4, (int)node.value);
-        assertEquals(3, (int)node.next.value);
+        list.insertAfter(2, 5);
+        assertEquals("{ 1 } -> { 2 } -> { 5 } -> { 3 } -> NULL", list.toString());
     }
     @Test
     public void testInsertAfterAtEnd() {
         LinkedList<Integer> list = new LinkedList<>();
         list.append(1);
         list.append(2);
-        list.append(3);
-        list.insertAfter(3, 4);
-        linkedlist.Node node = list.head.next.next.next;
-        assertEquals(4, (int)node.value);
+        list.insertAfter(2, 5);
+        assertEquals("{ 1 } -> { 2 } -> { 5 } -> NULL", list.toString());
     }
     @Test
     public void testKthGreaterThanTheLength () {
@@ -175,6 +167,69 @@ class AppTest {
         Node middleNode =list.findMiddleNode(list);
         assertEquals(4, middleNode.value);
         System.out.println(middleNode.value);
+    }
+    @Test
+    void testZipListsWithEmptyList() {
+        LinkedList<Integer> list1 = new LinkedList<>();
+        list1.insert(2);
+        list1.insert(1);
+
+        LinkedList<Integer> list2 = new LinkedList<>();
+
+        LinkedList<Integer> result = list1.zipLists(list1, list2);
+        String expectedResult = "{ 1 } -> { 2 } -> NULL";
+        assertEquals(expectedResult, result.toString());
+
+    }
+
+    @Test
+    void testZipListsWithDifferentLengths() {
+        LinkedList<Integer> list1 = new LinkedList<>();
+        list1.insert(5);
+        list1.insert(3);
+
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list2.insert(6);
+        list2.insert(4);
+        list2.insert(2);
+
+        LinkedList<Integer> result = list1.zipLists(list1, list2);
+        String expectedResult = "{ 3 } -> { 2 } -> { 5 } -> { 4 } -> { 6 } -> NULL";
+        assertEquals(expectedResult, result.toString());
+    }
+
+    @Test
+    void testZipListsWithOneItemEach() {
+        LinkedList<Integer> list1 = new LinkedList<>();
+        list1.insert(5);
+
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list2.insert(6);
+
+        LinkedList<Integer> result = list1.zipLists(list1, list2);
+        String expectedResult = "{ 5 } -> { 6 } -> NULL";
+        assertEquals(expectedResult, result.toString());
+    }
+
+
+
+
+    @Test
+    void testZipLists() {
+        LinkedList<Integer> list1 = new LinkedList<>();
+        list1.insert(5);
+        list1.insert(3);
+        list1.insert(1);
+
+        LinkedList<Integer> list2 = new LinkedList<>();
+        list2.insert(6);
+        list2.insert(4);
+        list2.insert(2);
+
+        LinkedList<Integer> result = list1.zipLists(list1, list2);
+        String expectedResult = "{ 1 } -> { 2 } -> { 3 } -> { 4 } -> { 5 } -> { 6 } -> NULL";
+        assertEquals(expectedResult, result.toString());
+
     }
 }
 

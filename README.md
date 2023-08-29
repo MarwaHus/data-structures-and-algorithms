@@ -9,3 +9,4 @@
 | LinkedList             | [LinkedList](./LinkedList/LinkedList.md)                   |
 | linked-list-insertions | [linked-list-insertions](./LinkedList/insertions.md)       |
 | linked-list-kth        | [linked-list-kth](./LinkedList/kth.md)                     |
+| linked-list-zip        | [linked-list-zip](./LinkedList/zipLists.md)                |
