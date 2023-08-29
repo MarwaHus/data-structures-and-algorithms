@@ -57,17 +57,15 @@ class AppTest {
     public void testAppend() {
         LinkedList<Integer> list = new LinkedList<>();
         list.append(1);
-        assertEquals(1, (int)list.head.value);
-        list.append(2);
-        assertEquals(2, (int)list.head.next.value);
-        list.append(3);
-        assertEquals(3, (int)list.head.next.next.value);
+        assertEquals("{ 1 } -> NULL", list.toString());
     }
     @Test
-    public void testAppendOneNodeToList() {
+    public void testAppendMultipleNodes() {
         LinkedList<Integer> list = new LinkedList<>();
         list.append(1);
-        assertEquals(1, (int)list.head.value);
+        list.append(2);
+        list.append(3);
+        assertEquals("{ 1 } -> { 2 } -> { 3 } -> NULL", list.toString());
     }
     @Test
     public void testInsertBeforeInMiddle() {
@@ -75,18 +73,16 @@ class AppTest {
         list.append(1);
         list.append(2);
         list.append(3);
-        list.insertBefore(2, 4);
-        assertEquals(4, (int)list.head.next.value);
-        assertEquals(2, (int)list.head.next.next.value);
+        list.insertBefore(2, 5);
+        assertEquals("{ 1 } -> { 5 } -> { 2 } -> { 3 } -> NULL", list.toString());
     }
     @Test
     public void testInsertBeforeAtBeginning() {
         LinkedList<Integer> list = new LinkedList<>();
         list.append(1);
         list.append(2);
-        list.append(3);
-        list.insertBefore(1, 4);
-        assertEquals(4, (int)list.head.value);
+        list.insertBefore(1, 5);
+        assertEquals("{ 5 } -> { 1 } -> { 2 } -> NULL", list.toString());
     }
     @Test
     public void testInsertAfterInMiddle() {
@@ -94,20 +90,16 @@ class AppTest {
         list.append(1);
         list.append(2);
         list.append(3);
-        list.insertAfter(2, 4);
-        linkedlist.Node node = list.head.next.next;
-        assertEquals(4, (int)node.value);
-        assertEquals(3, (int)node.next.value);
+        list.insertAfter(2, 5);
+        assertEquals("{ 1 } -> { 2 } -> { 5 } -> { 3 } -> NULL", list.toString());
     }
     @Test
     public void testInsertAfterAtEnd() {
         LinkedList<Integer> list = new LinkedList<>();
         list.append(1);
         list.append(2);
-        list.append(3);
-        list.insertAfter(3, 4);
-        linkedlist.Node node = list.head.next.next.next;
-        assertEquals(4, (int)node.value);
+        list.insertAfter(2, 5);
+        assertEquals("{ 1 } -> { 2 } -> { 5 } -> NULL", list.toString());
     }
     @Test
     public void testKthGreaterThanTheLength () {
