@@ -33,3 +33,4 @@ Efficiency:
         }
         return current.value;
     }</pre>
+![](kthtest.PNG)
