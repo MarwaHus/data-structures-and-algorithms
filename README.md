@@ -11,3 +11,4 @@
 | linked-list-kth        | [linked-list-kth](./LinkedList/kth.md)                     |
 | linked-list-zip        | [linked-list-zip](./LinkedList/zipLists.md)                |
 | stack and queue        | [stack and queue](./LinkedList/stack-and-queue.md)         |
+| stack-queue-pseudo        | [stack-queue-pseudo](./LinkedList/stack-queue-pseudo.md)         |
