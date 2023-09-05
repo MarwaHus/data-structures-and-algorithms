@@ -4,7 +4,7 @@
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 ![](cc11w.PNG)
-![](cc11test.PNG)
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 The PseudoQueue class uses two stacks to simulate a queue, with enqueue() adding items to stack1 and dequeue() and peek() "popping" items from stack2 after it has been filled by reversing the order of stack1. The time complexity for enqueue() is O(1) and for dequeue() and peek() is O(n) in the worst-case scenario. The amortized time complexity for dequeue() and peek() is O(1) on average. The time complexity for isEmpty() is O(1). The space complexity for the PseudoQueue class is O(n) due to the two stacks, which have a maximum size of n.
@@ -54,5 +54,5 @@ The PseudoQueue class uses two stacks to simulate a queue, with enqueue() adding
     }
     public boolean isEmpty() {
         return stack1.isEmpty();
-    }
-    }
+    }}
+![](cc11test.PNG)
