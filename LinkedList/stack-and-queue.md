@@ -5,10 +5,10 @@
 <!-- Embedded whiteboard image -->
 ### Stack:
 ![](cc10stack.PNG)
-![](stacktest.PNG)
+
 ### Queue
 ![](cc10queue.PNG)
-![](queuetest.PNG)
+
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 For both `Stack` and `Queue` implementations, a linked list data structure is used to store elements. This approach allows for O(1) time complexity for adding or removing elements (push, pop, enqueue, dequeue, and peek), as these operations only require updating the pointers of the nodes that make up the linked list.
@@ -26,7 +26,7 @@ Overall, the implementation of both `Stack` and `Queue` data structures have an 
 <!-- Show how to run your code, and examples of it in action -->
 ![](cc10st.PNG)
 ![](cc10q.PNG)
-
-
+![](stacktest.PNG)
+![](queuetest.PNG)
 
 
