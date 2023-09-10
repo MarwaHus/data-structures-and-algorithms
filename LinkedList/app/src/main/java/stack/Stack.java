@@ -18,7 +18,6 @@ public class Stack<T> {
         }
 
     }
-
     public T pop() {
         if (isEmpty()) {
             throw new RuntimeException("Stack is Empty");
@@ -27,14 +26,12 @@ public class Stack<T> {
         top = top.next;
         return value;
     }
-
     public T peek() {
         if (isEmpty()) {
             throw new RuntimeException("Stack is Empty");
         }
         return top.value;
     }
-
     public boolean isEmpty() {
         return top == null;
     }
