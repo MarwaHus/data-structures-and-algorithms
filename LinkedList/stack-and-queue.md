@@ -4,7 +4,7 @@
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 ### Stack:
-![](cc10stack.PNG)
+![](cc10stacK.PNG)
 
 ### Queue
 ![](cc10queue.PNG)
