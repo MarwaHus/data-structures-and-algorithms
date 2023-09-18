@@ -20,5 +20,16 @@ public class App {
 
         System.out.println("Contains 7? " + tree.contains(7));
         System.out.println("Contains 11? " + tree.contains(11));
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.root = new Node<>(10);
+        binaryTree.root.left = new Node<>(8);
+        binaryTree.root.right = new Node<>(12);
+        binaryTree.root.left.left = new Node<>(5);
+        binaryTree.root.left.right = new Node<>(9);
+        binaryTree.root.right.left = new Node<>(11);
+        binaryTree.root.right.right = new Node<>(15);
+
+        int maxVal = binaryTree.findMaximumValue();
+        System.out.println("Maximum value in binary tree is: " + maxVal);
     }
 }
