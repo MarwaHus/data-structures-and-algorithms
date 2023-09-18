@@ -120,5 +120,19 @@ class TreeTests {
         assertFalse(tree.contains(1));
         assertFalse(tree.contains(20));
     }
+    @Test
+    public void testFindMaximumValue() {
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.root = new Node<>(10);
+        binaryTree.root.left = new Node<>(8);
+        binaryTree.root.right = new Node<>(12);
+        binaryTree.root.left.left = new Node<>(5);
+        binaryTree.root.left.right = new Node<>(9);
+        binaryTree.root.right.left = new Node<>(11);
+        binaryTree.root.right.right = new Node<>(15);
+
+        int maxVal = binaryTree.findMaximumValue();
+        assertEquals(15, maxVal);
+    }
 }
 

@@ -54,5 +54,16 @@ public class BinaryTree<T> {
         postorderHelper(node.right, values);
         values.add(node.value);
     }
+    public T findMaximumValue() {
+        if (root == null) {
+            throw new NoSuchElementException("Binary Tree is empty!");
+        }
+
+        Node<T> current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.value;
+    }
 }
 
