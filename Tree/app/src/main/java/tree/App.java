@@ -10,12 +10,9 @@ public class App {
         binaryTree.root.left.right = new Node<>(9);
         binaryTree.root.right.left = new Node<>(11);
         binaryTree.root.right.right = new Node<>(15);
-
         System.out.println("Preorder traversal: " + binaryTree.preorder());
         System.out.println("Inorder traversal: " + binaryTree.inorder());
         System.out.println("Postorder traversal: " + binaryTree.postorder());
-        System.out.println("Breadth-first traversal: " + binaryTree.breadthFirst());
-
-        System.out.println("Maximum value in binary tree is: " + binaryTree.findMaximumValue());
-}
+        System.out.println("Maximum value in binary tree is: " + binaryTree.findMaximumValue(binaryTree.root));
+    }
 }

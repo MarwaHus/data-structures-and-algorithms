@@ -131,7 +131,7 @@ class TreeTests {
         binaryTree.root.right.left = new Node<>(11);
         binaryTree.root.right.right = new Node<>(15);
 
-        int maxVal = binaryTree.findMaximumValue();
+        int maxVal = binaryTree.findMaximumValue(binaryTree.root);
         assertEquals(15, maxVal);
     }
     @Test
