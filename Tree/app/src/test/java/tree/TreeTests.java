@@ -144,11 +144,12 @@ class TreeTests {
         binaryTree.root.left.right = new Node<>(9);
         binaryTree.root.right.left = new Node<>(11);
         binaryTree.root.right.right = new Node<>(15);
-
         List<Integer> expected = Arrays.asList(10, 8, 12, 5, 9, 11, 15);
         List<Integer> actual = binaryTree.breadthFirst();
-
         assertEquals(expected, actual);
     }
 }
+
+
+
 
