@@ -134,5 +134,21 @@ class TreeTests {
         int maxVal = binaryTree.findMaximumValue(binaryTree.root);
         assertEquals(15, maxVal);
     }
+    @Test
+    void testBreadthFirst() {
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
+        binaryTree.root = new Node<>(10);
+        binaryTree.root.left = new Node<>(8);
+        binaryTree.root.right = new Node<>(12);
+        binaryTree.root.left.left = new Node<>(5);
+        binaryTree.root.left.right = new Node<>(9);
+        binaryTree.root.right.left = new Node<>(11);
+        binaryTree.root.right.right = new Node<>(15);
+
+        List<Integer> expected = Arrays.asList(10, 8, 12, 5, 9, 11, 15);
+        List<Integer> actual = binaryTree.breadthFirst();
+
+        assertEquals(expected, actual);
+    }
 }
 

@@ -68,5 +68,37 @@ public class BinaryTree<T> {
             result = right;
         return result;
     }
-}
+    public List<T> breadthFirst() {
+        List<T> values = new ArrayList<>();
 
+        int height = getHeight(root);
+        for (int i = 1; i <= height; i++) {
+            bfsHelper(root, i, values);
+        }
+
+        return values;
+    }
+
+    private int getHeight(Node<T> node) {
+        if (node == null) {
+            return 0;
+        }
+        int left = getHeight(node.left);
+        int right = getHeight(node.right);
+        return 1 + Math.max(left, right);
+    }
+
+    private void bfsHelper(Node<T> node, int level, List<T> values) {
+        if (node == null) {
+            return;
+        }
+        if (level == 1) {
+            values.add(node.value);
+        } else if (level > 1) {
+            bfsHelper(node.left, level - 1, values);
+            bfsHelper(node.right, level - 1, values);
+        }
+    }
+
+
+}
