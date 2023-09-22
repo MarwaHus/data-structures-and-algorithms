@@ -54,16 +54,19 @@ public class BinaryTree<T> {
         postorderHelper(node.right, values);
         values.add(node.value);
     }
-    public T findMaximumValue() {
-        if (root == null) {
-            throw new NoSuchElementException("Binary Tree is empty!");
-        }
+    public  int findMaximumValue(Node node) {
+        if (node == null)
+            return Integer.MIN_VALUE;
 
-        Node<T> current = root;
-        while (current.right != null) {
-            current = current.right;
-        }
-        return current.value;
+        int result = (int) node.value;
+        int left = findMaximumValue(node.left);
+        int right = findMaximumValue(node.right);
+
+        if (left > result)
+            result = left;
+        if (right > result)
+            result = right;
+        return result;
     }
     public List<T> breadthFirst() {
         List<T> values = new ArrayList<>();
