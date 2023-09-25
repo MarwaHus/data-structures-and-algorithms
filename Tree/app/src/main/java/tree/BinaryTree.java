@@ -99,6 +99,28 @@ public class BinaryTree<T> {
             bfsHelper(node.right, level - 1, values);
         }
     }
-
-
+    public KaryNode<String> fizzBuzzTree(KaryNode<Integer> tree) {
+        KaryNode<String> newRoot = fizzBuzzNode(tree.getRoot());
+        return new KaryNode<KaryNode<String>>(newRoot).getValue();
+    }
+    private static KaryNode<String> fizzBuzzNode(KaryNode<Integer> node) {
+        if (node == null) {
+            return null;
+        }
+        String newValue = fizzBuzz(node.getValue());
+        KaryNode<String> newNode = new KaryNode(newValue);
+        for (KaryNode<Integer> child : node.getChildren()) {
+            newNode.getChildren().add(fizzBuzzNode(child));
+        }return newNode;}
+    private static String fizzBuzz(int value) {
+        if (value % 3 == 0 && value % 5 == 0) {
+            return "FizzBuzz";
+        } else if (value % 3 == 0) {
+            return "Fizz";
+        } else if (value % 5 == 0) {
+            return "Buzz";
+        } else {
+            return Integer.toString(value);
+        }
+    }
 }
