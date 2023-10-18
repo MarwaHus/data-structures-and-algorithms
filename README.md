@@ -14,3 +14,4 @@
 | stack-queue-pseudo         | [stack-queue-pseudo](./LinkedList/stack-queue-pseudo.md)                 |
 | stack-queue-animal-shelter | [stack-queue-animal-shelter](./LinkedList/stack-queue-animal-shelter.md) |
 | Insertion                  | [insertion](./ArrayInsertShift/insertion.md)                             |
+| MergeSort                  | [MergeSort](./ArrayInsertShift/merge.md)                                 |

@@ -58,7 +58,7 @@ In the fifth iteration, `i=5`:
 
 
 ```
-### Efficency
+### Efficiency
  * The time complexity of the Insertion Sort algorithm is: `O(n^2)` in the worst case, where n is the number of elements in the array. 
 
  * The space complexity of the Insertion Sort algorithm is: `O(1)`, as it only requires a constant amount of extra space to store some temporary variables.
