@@ -1,0 +1,16 @@
+# Challenge Title
+<!-- Description of the challenge -->
+The implemented Hashtable class provides a way to store and retrieve key-value pairs.
+The set() method takes a key-value pair, hashes the key to determine its index within the table, and sets the key-value pair in the table.
+The get() method takes a key and returns the value associated with that key in the table.
+The has() method takes a key and checks if it already exists in the table. It returns a boolean indicating whether the key exists or not.
+The keys() method returns a collection of all keys in the table.
+The hash() method takes a key and returns its index within the table.
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
