@@ -59,4 +59,16 @@ class AppTest {
         int hashValue = hashMap.hash("one");
         assertTrue(hashValue >= 0 && hashValue < 5);
     }
+    @Test
+    void repeatedWordTest() {
+        String str = "Once upon a time, there was a brave princess who...";
+        String result = HashMap.repeatedWord(str);
+        assertEquals("a", result);
+
+        str = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+        result = HashMap.repeatedWord(str);
+        assertEquals("summer", result);
+
+    }
+
 }

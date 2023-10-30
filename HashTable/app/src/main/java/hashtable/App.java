@@ -5,6 +5,8 @@ package hashtable;
 
 import java.util.List;
 
+import static hashtable.HashMap.repeatedWord;
+
 public class App {
 
     public static void main(String[] args) {
@@ -21,5 +23,21 @@ public class App {
         keys = hashMap.keys();
         System.out.println("New keys in HashMap: " + keys);
         System.out.println("HashMap size: " + hashMap.size);
+        String str = null;
+        String repeated = repeatedWord(str);
+        System.out.println("repeated word: " + repeated);
+
+        str = "";
+        repeated = repeatedWord(str);
+        System.out.println("repeated word : " + repeated);
+
+        str = "Once upon a time, there was a brave princess who...";
+        repeated = repeatedWord(str);
+        System.out.println("repeated word in '" + str + "': " + repeated);
+
+        str = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
+        repeated = repeatedWord(str);
+        System.out.println("Repeated word in '" + str + "': " + repeated);
+
     }
 }
