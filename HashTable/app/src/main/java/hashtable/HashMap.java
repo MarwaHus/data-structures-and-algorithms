@@ -56,6 +56,21 @@ public class HashMap<K, V> {
         }
         return keys;
     }
+    public static String repeatedWord(String str) {
+        if (str == null || str.trim().equals("")) {
+            return null;
+        }
+        HashMap<String, Integer> wordCount = new HashMap<>(str.length());
+        String[] words = str.toLowerCase().split("[\\W]+");
+        for (String word : words) {
+            if (wordCount.has(word)) {
+                return word;
+            } else {
+                wordCount.set(word, 1);
+            }
+        }
+        return null;
+    }
     public int hash(K key) {
         return Math.abs(key.hashCode()) % size;
     }
