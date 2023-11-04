@@ -8,9 +8,16 @@ The keys() method returns a collection of all keys in the table.
 The hash() method takes a key and returns its index within the table.
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![](cc30.PNG)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-
+- The implemented hash map to handle hash collisions. It uses an ArrayList of LinkedList to store the key-value pairs where each index of the ArrayList corresponds to a specific hash bucket.
+### Big o
+* Time complexity:
+Setting a key-value pair, Getting a value for a given key, Checking if a key exists: O(1).
+Retrieving a list of all keys: O(n).
+* Space complexity: O(n)
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
+![](cc30a.PNG)
+![](cc30b.PNG)
