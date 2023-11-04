@@ -17,6 +17,17 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/HashTable" />
+        <option name="gradleHome" value="C:/src/gradle-8.2.1" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/HashTable" />
+            <option value="$PROJECT_DIR$/HashTable/app" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/arrayBS" />
         <option name="gradleHome" value="C:/src/gradle-8.2.1" />
         <option name="gradleJvm" value="11 (2)" />
