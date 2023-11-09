@@ -4,8 +4,13 @@
 package hashtable;
 
 import org.junit.jupiter.api.Test;
+import treeintersection.BinaryTree;
+import treeintersection.TreeIntersection;
 
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -70,5 +75,43 @@ class AppTest {
         assertEquals("summer", result);
 
     }
+    @Test
+    void testTreeIntersection() {
+        BinaryTree<Integer> tree1 = new BinaryTree<>();
+        tree1.insert(5);
+        tree1.insert(10);
+        tree1.insert(15);
+        tree1.insert(20);
+        BinaryTree<Integer> tree2 = new BinaryTree<>();
+        tree2.insert(2);
+        tree2.insert(8);
+        tree2.insert(10);
+        tree2.insert(15);
+        HashSet<Integer> expected1 = new HashSet<>(Arrays.asList(10, 15));
+        assertEquals(expected1, TreeIntersection.treeIntersection(tree1, tree2));
+
+        BinaryTree<Integer> tree3 = new BinaryTree<>();
+        tree3.insert(4);
+        tree3.insert(6);
+        tree3.insert(8);
+        BinaryTree<Integer> tree4 = new BinaryTree<>();
+        tree4.insert(2);
+        tree4.insert(10);
+        tree4.insert(12);
+        HashSet<Integer> expected2 = new HashSet<>();
+        assertEquals(expected2, TreeIntersection.treeIntersection(tree3, tree4));
+
+        BinaryTree<Integer> tree5 = new BinaryTree<>();
+        tree5.insert(1);
+        tree5.insert(3);
+        tree5.insert(5);
+        BinaryTree<Integer> tree6 = new BinaryTree<>();
+        tree6.insert(2);
+        tree6.insert(5);
+        tree6.insert(8);
+        HashSet<Integer> expected3 = new HashSet<>(Collections.singletonList(5));
+        assertEquals(expected3, TreeIntersection.treeIntersection(tree5, tree6));
+    }
+
 
 }
