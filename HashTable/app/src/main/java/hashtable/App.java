@@ -3,14 +3,18 @@
  */
 package hashtable;
 
+
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import static hashtable.HashMap.repeatedWord;
+import static hashtable.LeftJoin.leftJoin;
 
 public class App {
 
     public static void main(String[] args) {
-        HashMap<String, Integer> hashMap = new HashMap<>(5);
+       /* HashMap<String, Integer> hashMap = new HashMap<>(5);
         hashMap.set("one", 3);
         hashMap.set("two", 2);
         hashMap.set("three", 1);
@@ -38,6 +42,7 @@ public class App {
         str = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...";
         repeated = repeatedWord(str);
         System.out.println("Repeated word in '" + str + "': " + repeated);
+*/
 
     }
 }
