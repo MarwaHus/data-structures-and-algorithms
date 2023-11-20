@@ -15,6 +15,12 @@ public class Edge <T extends Comparable<? super T>> implements Comparable<Vertex
         this.weight = weight;
     }
 
+    public Vertex<T> getDestination() {
+        return destination;
+    }
+    public int getWeight() {
+        return weight;
+    }
     @Override
     public int compareTo(Vertex<T> o) {
         throw new UnsupportedOperationException("Edge does not implement compareTo()");

@@ -3,6 +3,8 @@
  */
 package graph;
 
+import java.util.LinkedList;
+
 public class App {
     public static void main(String[] args) {
         Graph<String> graph = new Graph<>(10);
@@ -14,5 +16,7 @@ public class App {
         System.out.println("Vertices in the graph: " + graph.getVertices());
         System.out.println("Neighbors of vertex1: " + graph.getNeighbors(vertex1));
         System.out.println("Number of vertices in the graph: " + graph.size());
+        LinkedList<Vertex<String>> bfsResult = graph.breadthFirst(vertex1);
+        System.out.println("Breadth-first traversal: " + bfsResult);
     }
 }

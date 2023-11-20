@@ -49,6 +49,38 @@ public class Graph <T extends Comparable<? super T>> implements Comparable<Graph
         return numberOfVertices;  // TODO: make sure this gets updated at the right times
     }
 
+    public LinkedList<Vertex<T>> breadthFirst(Vertex<T> start) {
+        if (!adjacencyLists.containsKey(start)) {
+            throw new IllegalArgumentException("Start vertex not found in the graph");
+        }
+
+        LinkedList<Vertex<T>> visited = new LinkedList<>();
+        LinkedList<Vertex<T>> queue = new LinkedList<>();
+        HashMap<Vertex<T>, Boolean> visitedMap = new HashMap<>();
+        visitedMap.put(start, true);
+        visited.add(start);
+        queue.add(start);
+        while (!queue.isEmpty()) {
+            Vertex<T> currentVertex = queue.poll();
+            LinkedList<Edge<T>> neighbors = adjacencyLists.get(currentVertex);
+            for (Edge<T> edge : neighbors) {
+                Vertex<T> neighbor = edge.getDestination();
+                if (!visitedMap.containsKey(neighbor)) {
+                    visitedMap.put(neighbor, true);
+                    queue.add(neighbor);
+                    visited.add(neighbor);
+                }
+            }
+        }
+
+        for (Vertex<T> vertex : adjacencyLists.keySet()) {
+            if (!visitedMap.containsKey(vertex)) {
+                visited.add(vertex);
+            }
+        }
+
+        return visited;
+    }
     @Override
     public int compareTo(Graph<T> o)
     {
