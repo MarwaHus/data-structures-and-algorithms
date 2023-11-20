@@ -4,6 +4,9 @@
 package graph;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.LinkedList;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -66,4 +69,60 @@ class AppTest {
         assertEquals(1, singleVertexGraph.size());
         assertTrue(singleVertexGraph.getNeighbors(singleVertex).isEmpty());
     }
+    @Test
+    void testBreadthFirst() {
+        Graph<String> graph = new Graph<>(6);
+        Vertex<String> vertexA = graph.addVertex("A");
+        Vertex<String> vertexB = graph.addVertex("B");
+        Vertex<String> vertexC = graph.addVertex("C");
+        Vertex<String> vertexD = graph.addVertex("D");
+        Vertex<String> vertexE = graph.addVertex("E");
+        Vertex<String> vertexF = graph.addVertex("F");
+
+        graph.addEdge(vertexA, vertexB, 1);
+        graph.addEdge(vertexA, vertexC, 1);
+        graph.addEdge(vertexB, vertexD, 1);
+        graph.addEdge(vertexC, vertexE, 1);
+        graph.addEdge(vertexC, vertexF, 1);
+
+        LinkedList<Vertex<String>> result = graph.breadthFirst(vertexA);
+
+        assertEquals(6, result.size());
+        assertTrue(result.contains(vertexA));
+        assertTrue(result.contains(vertexB));
+        assertTrue(result.contains(vertexC));
+        assertTrue(result.contains(vertexD));
+        assertTrue(result.contains(vertexE));
+        assertTrue(result.contains(vertexF));
+    }
+
+
+    @Test
+    void testBreadthFirstGraphWithMultiplePaths() {
+        Graph<String> graph = new Graph<>(6);
+        Vertex<String> vertexA = graph.addVertex("A");
+        Vertex<String> vertexB = graph.addVertex("B");
+        Vertex<String> vertexC = graph.addVertex("C");
+        Vertex<String> vertexD = graph.addVertex("D");
+        Vertex<String> vertexE = graph.addVertex("E");
+        Vertex<String> vertexF = graph.addVertex("F");
+
+        graph.addEdge(vertexA, vertexB, 1);
+        graph.addEdge(vertexA, vertexC, 1);
+        graph.addEdge(vertexB, vertexD, 1);
+        graph.addEdge(vertexC, vertexE, 1);
+        graph.addEdge(vertexE, vertexF, 1);
+
+        LinkedList<Vertex<String>> result = graph.breadthFirst(vertexA);
+
+        assertEquals(6, result.size());
+        assertTrue(result.contains(vertexA));
+        assertTrue(result.contains(vertexB));
+        assertTrue(result.contains(vertexC));
+        assertTrue(result.contains(vertexD));
+        assertTrue(result.contains(vertexE));
+        assertTrue(result.contains(vertexF));
+    }
+
+
 }
