@@ -17,3 +17,4 @@
 | MergeSort                  | [MergeSort](./ArrayInsertShift/merge.md)                                 |
 | hashmap-repeated-word      | [hashmap-repeated-word](./HashTable/cc31.md)                             |
 | graph                      | [graph](./Graph/graph.md)                                                |
+| graph-business-trip        | [graph-business-trip ](./Graph/cc37.md)                                  |

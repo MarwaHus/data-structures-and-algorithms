@@ -3,12 +3,14 @@
  */
 package graph;
 
+import java.util.Arrays;
 import java.util.LinkedList;
+
 
 public class App {
     public static void main(String[] args) {
         Graph<String> graph = new Graph<>(10);
-        Vertex<String> vertex1 = graph.addVertex("a");
+       Vertex<String> vertex1 = graph.addVertex("a");
         Vertex<String> vertex2 = graph.addVertex("b");
         Vertex<String> vertex3 = graph.addVertex("c");
         Vertex<String> vertex4 = graph.addVertex("d");
@@ -18,5 +20,4 @@ public class App {
         System.out.println("Number of vertices in the graph: " + graph.size());
         LinkedList<Vertex<String>> bfsResult = graph.breadthFirst(vertex1);
         System.out.println("Breadth-first traversal: " + bfsResult);
-    }
-}
+    }}

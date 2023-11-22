@@ -35,4 +35,8 @@ public class Vertex<T extends Comparable<? super T>> implements Comparable<Verte
                 "value=" + value +
                 '}';
     }
+
+    public Object getValue() {
+        return value;
+    }
 }

@@ -81,6 +81,7 @@ public class Graph <T extends Comparable<? super T>> implements Comparable<Graph
 
         return visited;
     }
+
     @Override
     public int compareTo(Graph<T> o)
     {
