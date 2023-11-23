@@ -16,10 +16,8 @@ public class GraphBusinessTripTest {
         Vertex<String> metroville = graph.addVertex("Metroville");
         Vertex<String> pandora = graph.addVertex("Pandora");
         graph.addEdge(metroville, pandora, 82);
-
         String[] trip = {"Metroville", "Pandora"};
         Integer cost = GraphBusinessTrip.businessTrip(graph, trip);
-
         assertEquals(82, cost);
     }
 
