@@ -5,6 +5,7 @@ package graph;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 
 public class App {
@@ -20,4 +21,26 @@ public class App {
         System.out.println("Number of vertices in the graph: " + graph.size());
         LinkedList<Vertex<String>> bfsResult = graph.breadthFirst(vertex1);
         System.out.println("Breadth-first traversal: " + bfsResult);
+
+
+        DepthFirst graph1 = new DepthFirst();
+        Node node1 = new Node(1);
+        Node node2 = new Node(2);
+        Node node3 = new Node(3);
+        Node node4 = new Node(4);
+        node1.addNeighbor(node2);
+        node1.addNeighbor(node3);
+        node2.addNeighbor(node4);
+        node3.addNeighbor(node4);
+        graph1.addNode(node1);
+        graph1.addNode(node2);
+        graph1.addNode(node3);
+        graph1.addNode(node4);
+        List<Node> depthFirstTraversal = graph1.depthFirst(node1);
+        System.out.println("Depth-First Traversal:");
+        for (Node node : depthFirstTraversal) {
+            System.out.print(node.value + " ");
+        }
+
+
     }}
