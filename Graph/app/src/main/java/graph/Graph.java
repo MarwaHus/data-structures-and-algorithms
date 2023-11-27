@@ -1,7 +1,6 @@
 package graph;
 
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Graph <T extends Comparable<? super T>> implements Comparable<Graph<T>>  // just in case you have Comparable data structures
 {
@@ -81,6 +80,35 @@ public class Graph <T extends Comparable<? super T>> implements Comparable<Graph
 
         return visited;
     }
+    public List<Vertex<T>> depthFirst(Vertex<T> start) {
+        if (!adjacencyLists.containsKey(start)) {
+            throw new IllegalArgumentException("Start vertex not found in the graph");
+        }
+
+        List<Vertex<T>> result = new ArrayList<>();
+        Set<Vertex<T>> visited = new HashSet<>();
+
+        depthFirstHelper(start, visited, result);
+
+        return result;
+    }
+
+    private void depthFirstHelper(Vertex<T> currentVertex, Set<Vertex<T>> visited, List<Vertex<T>> result) {
+        if (currentVertex == null || visited.contains(currentVertex)) {
+            return;
+        }
+
+        visited.add(currentVertex);
+        result.add(currentVertex);
+
+        LinkedList<Edge<T>> neighbors = adjacencyLists.get(currentVertex);
+        for (Edge<T> edge : neighbors) {
+            Vertex<T> neighbor = edge.getDestination();
+            depthFirstHelper(neighbor, visited, result);
+        }
+    }
+
+
 
     @Override
     public int compareTo(Graph<T> o)
